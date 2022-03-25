@@ -19,7 +19,16 @@ RUN for executable in $(swift package completion-tool list-executables); do \
 
 # rumtime image
 FROM ${RUNTIME_IMAGE}
-LABEL org.opencontainers.image.source https://github.com/Apple-Actions/reviewdog-action-xcode-issues
+
+LABEL org.opencontainers.image.source https://github.com/ittybittyapps/reviewdog-action-xcode-issues
+LABEL version="1.0.0"
+LABEL repository="https://github.com/ittybittyapps/reviewdog-action-xcode-issues"
+LABEL homepage="https://github.com/ittybittyapps/reviewdog-action-xcode-issues"
+
+LABEL "com.github.actions.name"="Report issues from Xcode Result file with reviewdog"
+LABEL "com.github.actions.description"="Reports isses from an Xcode .xcresult file on pull requests with reviewdog to improve code review experience."
+LABEL "com.github.actions.icon"="alert-octagon"
+LABEL "com.github.actions.color"="blue"
 
 ENV REVIEWDOG_VERSION=v0.14.0
 
