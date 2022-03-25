@@ -1,3 +1,4 @@
+// Copyright © 2022 Itty Bitty Apps Pty Ltd. See LICENSE file.
 import Foundation
 
 public struct XcodeObject<Value: Decodable>: Decodable {
