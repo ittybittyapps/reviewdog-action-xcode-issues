@@ -69,7 +69,7 @@ public struct DocumentLocation: Decodable {
     }
 
     enum CodingKeys: String, CodingKey {
-        case url = "url"
+        case url
     }
 }
 
