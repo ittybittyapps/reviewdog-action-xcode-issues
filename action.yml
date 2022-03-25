@@ -32,7 +32,8 @@ inputs:
     default: ""
 runs:
   using: "docker"
-  image: "Dockerfile"
+  image: "docker://ghcr.io/ittybittyapps/reviewdog-action-xcode-issues:latest"
+  entrypoint: "entrypoint.sh"
 branding:
   icon: "alert-octagon"
   color: "blue"

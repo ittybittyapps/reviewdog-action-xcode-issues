@@ -45,4 +45,4 @@ COPY --from=builder /executables/* /usr/bin
 
 COPY entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+CMD ["xcissues"]
