@@ -5,7 +5,8 @@ import Foundation
 public struct XcodeIssues: AsyncParsableCommand {
     public static var configuration = CommandConfiguration(
         commandName: "xcissues",
-        abstract: "A utility for reporting xcode issues in reviewdog JSON Format.")
+        abstract: "A utility for reporting xcode issues in reviewdog JSON Format."
+    )
 
     @Argument(help: "The path of the xcresult JSON file to process. If omitted, stdin is used instead.")
     var input: String?
