@@ -1,15 +1,38 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
+name: "Report issues from Xcode Result file with reviewdog"
+description: "🐶 Reports isses from an Xcode .xcresult file on pull requests with reviewdog to improve code review experience."
+author: "orj"
 inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
+  xcresult_json_file:
+    description: "Path to json file extracted from .xcresult using `xcrun xcresulttool get --format json --path MyProject.xcresult`"
     required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  github_token:
+    description: "GITHUB_TOKEN"
+    default: "${{ github.token }}"
+  level:
+    description: "Report level for reviewdog [info,warning,error]"
+    default: "error"
+  reporter:
+    description: |
+      Reporter of reviewdog command [github-pr-check,github-pr-review,github-check].
+      Default is github-pr-check.
+      github-pr-review can use Markdown and add a link to rule page in reviewdog reports.
+    default: "github-pr-check"
+  filter_mode:
+    description: |
+      Filtering mode for the reviewdog command [added,diff_context,file,nofilter].
+      Default is added.
+    default: "added"
+  fail_on_error:
+    description: |
+      Exit code for reviewdog when errors are found [true,false]
+      Default is `false`.
+    default: "false"
+  reviewdog_flags:
+    description: "Additional reviewdog flags"
+    default: ""
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.who-to-greet }}
+  using: "docker"
+  image: "Dockerfile"
+branding:
+  icon: "alert-octagon"
+  color: "blue"
