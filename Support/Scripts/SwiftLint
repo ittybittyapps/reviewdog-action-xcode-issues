@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -xeu
+
+SWIFTLINT_VERSION=${SWIFTLINT_VERSION:-latest}
+REPORTER=${REPORTER:-xcode}
+
+docker run -v "$(pwd):$(pwd)" -w "$(pwd)" "ghcr.io/realm/swiftlint:${SWIFTLINT_VERSION}" \
+  swiftlint lint \
+  --strict \
+  --reporter "${REPORTER}"

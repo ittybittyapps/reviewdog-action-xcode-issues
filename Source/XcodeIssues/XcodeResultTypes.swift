@@ -1,3 +1,4 @@
+// Copyright © 2022 Itty Bitty Apps Pty Ltd. See LICENSE file.
 import Foundation
 
 public struct XcodeObject<Value: Decodable>: Decodable {
@@ -68,7 +69,7 @@ public struct DocumentLocation: Decodable {
     }
 
     enum CodingKeys: String, CodingKey {
-        case url = "url"
+        case url
     }
 }
 
