@@ -96,8 +96,8 @@ modifier_order:
     - override
 
 multiline_arguments:
-    first_argument_location: next_line
+  first_argument_location: next_line
 
 trailing_comma:
-    mandatory_comma: true
+  mandatory_comma: true
 
