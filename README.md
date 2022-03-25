@@ -57,7 +57,7 @@ jobs:
           name: xcode-results.json
           path: xcode-results.json
       - name: Report Issues
-        uses: Apple-Actions/reviewdog-action-xcode-issues@master
+        uses: ittybittyapps/reviewdog-action-xcode-issues@v1
         with:
           github_token: ${{ secrets.github_token }}
           xcresult_json_file: xcode-results.json
